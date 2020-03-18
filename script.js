@@ -42,21 +42,25 @@ $(document).ready(function () {
 
 function emphasize(audio) {
     var interval = setInterval(function () {
-        var context = document.getElementById('context');
+        var context = document.getElementById('context')
+        var description = document.getElementById('description')
 
         if (audio.currentTime > 0) {
             // console.log(audio.currentTime);
             context.src = "guess/man.jpg"
+            description.innerHTML = "<b>Lelaki</b> atu jogging di luar"
         }
         
         // 2.9 jog
         if (audio.currentTime > 2.9) {
             context.src = "guess/jog.jpg"
+            description.innerHTML = "Lelaki atu <b>jogging</b> di luar"
         }
 
         // 4.5 outside
         if (audio.currentTime > 4.5) {
             context.src = "guess/outside.jpg"
+            description.innerHTML = "Lelaki atu jogging di <b>luar</b>"
         }
 
         if (audio.ended) {
